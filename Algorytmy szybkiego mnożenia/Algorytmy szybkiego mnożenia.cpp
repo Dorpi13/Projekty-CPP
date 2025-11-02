@@ -58,31 +58,31 @@ int Karacuba (int k,int o) {
     string pierwsza = to_string(k3); //zmiana liczby na string aby policzyć ilość znaków
     string druga = to_string(o4);
 
-    cout << pierwsza << endl;
-    cout << druga << endl;
+    //cout << pierwsza << endl;
+    //cout << druga << endl;
 
     long long rozmiar1 = pierwsza.size();
     long long rozmiar2 = druga.size();
 
     if (rozmiar1 > rozmiar2 or rozmiar1 < rozmiar2) {
-        cout << "start testu" << endl;
+        //cout << "start testu" << endl;
         if (rozmiar1 > rozmiar2) {
             int dlugosc = rozmiar1 - rozmiar2;
-            cout << dlugosc << endl;
+            //cout << dlugosc << endl;
             for (int i = 0; i<dlugosc; i++) {
-                cout << "start Fora" << endl;
+                //cout << "start Fora" << endl;
                 druga = "0" + druga;
-                cout << druga << endl;
+               //cout << druga << endl;
             }
         }
 
         if (rozmiar2 > rozmiar1) {
             int dlugosc2 = rozmiar2 - rozmiar1;
-            cout << dlugosc2 << endl;
+            //cout << dlugosc2 << endl;
             for (int i = 0; i<dlugosc2; i++) {
-                cout << "start Fora2" << endl;
+                //cout << "start Fora2" << endl;
                 pierwsza = "0" + pierwsza;
-                cout << pierwsza << endl;
+                //cout << pierwsza << endl;
             }
         }
     } //dodawanie 0 na początek jeśli liczba znaków jest nieparzysta np. dla 45600 i 34 aby poprawić na 45600 i 00034
@@ -98,21 +98,21 @@ int Karacuba (int k,int o) {
     int n1 = pierwsza.length();
     int m1 = n1/2; //zapisywanie ilości znaków dla K oraz O
 
-    cout << n1 << " " << m1 << " " << endl;
+    //cout << n1 << " " << m1 << " " << endl;
     int KPolowa = pierwsza.size() / 2;
     int OPolowa = druga.size() / 2;
 
     string Kcz1 = pierwsza.substr(0, KPolowa);
     string Kcz2 = pierwsza.substr(KPolowa);
 
-    cout << "Kcz1 " << Kcz1 << endl;
-    cout << "Kcz2 " << Kcz2 << endl;
+    //cout << "Kcz1 " << Kcz1 << endl;
+    //cout << "Kcz2 " << Kcz2 << endl;
 
     string Ocz1 = druga.substr(0, OPolowa);
     string Ocz2 = druga.substr(OPolowa); //dzielenie i zapisywanie liczby na 2 części
 
-    cout << "Ocz1 " << Ocz1 << endl;
-    cout << "Ocz2 " << Ocz2 << endl;
+    //cout << "Ocz1 " << Ocz1 << endl;
+    //cout << "Ocz2 " << Ocz2 << endl;
 
     long long k1 = stoi(Kcz1);
     long long k2 = stoi(Kcz2);
@@ -121,11 +121,11 @@ int Karacuba (int k,int o) {
     long long o2 = stoi(Ocz2); //zamiana z string na int lecz już podzielone na 2 części czyli zamiast 0123 mamy o1=01 oraz o2=23
 
     long long z1 = k1*o1;
-    cout << z1 << endl;
+    //cout << z1 << endl;
     long long z2 = k2*o2;
-    cout << z2 << endl;
+    //cout << z2 << endl;
     long long z3 = ((k1 + k2)*(o1 + o2))-z1-z2;
-    cout << z3 << endl;
+    //cout << z3 << endl;
     long long wynik = z1*pow(10, 2*m1) + z3*pow(10, m1) + z2; //Algorytm Karacuba
     if (kUjemne != oUjemne) {
         wynik = -wynik;
